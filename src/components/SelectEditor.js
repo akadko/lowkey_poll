@@ -38,7 +38,7 @@ const SelectEditor = ({ label, maxOptionCount, onChange }) => {
     return (
         <View style={styles.container}>
             <View style={styles.labelWrapper}>
-                <Label>{label}</Label>
+                <Label bold>{label}</Label>
                 <Label>
                     {options.length}/{maxOptionCount}
                 </Label>

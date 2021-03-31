@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react'
-import { View, StyleSheet, TextInput } from 'react-native'
-import { Label } from './text'
+import { View, StyleSheet } from 'react-native'
+import { BaseTextInput, Label } from './text'
 
 const TextField = ({ label, maxCharCount, onChange, ...props }) => {
     const [value, setValue] = useState('')
@@ -14,14 +14,14 @@ const TextField = ({ label, maxCharCount, onChange, ...props }) => {
     return (
         <View style={styles.container}>
             <View style={styles.labelWrapper}>
-                <Label>{label}</Label>
+                <Label bold>{label}</Label>
                 <Label
                     style={[value.length >= maxCharCount && styles.warningText]}
                 >
                     {value.length}/{maxCharCount}
                 </Label>
             </View>
-            <TextInput
+            <BaseTextInput
                 value={value}
                 onChangeText={onChangeText}
                 maxLength={maxCharCount}
@@ -49,11 +49,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         paddingTop: 16,
         paddingBottom: 14,
-        backgroundColor: '#1c1b2a',
         borderRadius: 12,
         marginVertical: 8,
-        fontSize: 15,
-        color: 'white',
         maxHeight: 84,
     },
     warningText: {

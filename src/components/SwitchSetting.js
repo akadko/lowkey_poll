@@ -1,12 +1,13 @@
 import React from 'react'
-import { View, Switch, StyleSheet, Text } from 'react-native'
+import { View, Switch, StyleSheet } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import { BaseText } from './text'
 
 const SwitchSetting = ({ icon, label, isEnabled, onChange }) => {
     return (
         <View style={styles.container}>
             {Icon.hasIcon(icon) && <Icon name={icon} size={24} color="#fff" />}
-            <Text style={styles.label}>{label}</Text>
+            <BaseText style={styles.label}>{label}</BaseText>
             <Switch
                 trackColor={{ false: '#14141c', true: '#1C6EF2' }}
                 thumbColor={isEnabled ? '#fff' : '#7E7A9A'}
@@ -27,9 +28,9 @@ const styles = StyleSheet.create({
     },
     label: {
         flex: 1,
-        color: '#fff',
         fontSize: 14,
         paddingHorizontal: 15,
+        fontWeight: '500',
     },
 })
 

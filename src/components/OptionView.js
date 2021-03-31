@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react'
-import { TextInput, View, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, StyleSheet, TouchableOpacity } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import { BaseTextInput } from './text'
 
 const OptionView = ({ text, index: key, onChange, onDelete }) => {
     const [value, setValue] = useState(text)
@@ -19,7 +20,7 @@ const OptionView = ({ text, index: key, onChange, onDelete }) => {
 
     return (
         <View style={styles.container}>
-            <TextInput
+            <BaseTextInput
                 ref={inputRef}
                 value={value}
                 onChangeText={setValue}
@@ -45,12 +46,9 @@ const styles = StyleSheet.create({
     },
     textInput: {
         padding: 16,
-        backgroundColor: '#1c1b2a',
         borderTopLeftRadius: 12,
         borderBottomLeftRadius: 12,
         marginVertical: 4,
-        fontSize: 15,
-        color: 'white',
         flex: 1,
     },
     deleteButton: {

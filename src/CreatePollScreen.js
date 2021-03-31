@@ -2,10 +2,10 @@ import React, { useReducer, useCallback } from 'react'
 import { View, Modal, StyleSheet } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import LinearGradient from 'react-native-linear-gradient'
-import TextField from './components/TextField';
-import SelectEditor from './components/SelectEditor';
+import TextField from './components/TextField'
+import SelectEditor from './components/SelectEditor'
 import { NavBar } from './components/NavBar'
-import SwitchSetting from './components/SwitchSetting';
+import SwitchSetting from './components/SwitchSetting'
 
 const gradientColors = [
     'rgba(36,103,244,0.13)',
@@ -59,7 +59,11 @@ const CreatePollScreen = () => {
         alert(
             `New poll created!\nQuestion: ${
                 poll.question
-            }\nOptions:\n${poll.options.map((o) => '- ' + o.text).join('\n')}`
+            }\nOptions:\n${poll.options
+                .map((o) => '- ' + o.text)
+                .join('\n')}\n${poll.isAnonymous ? 'Anonymous voting' : ''}\n${
+                poll.isExtensible ? 'Has ability to add more options' : ''
+            }`
         )
     }, [poll])
     return (

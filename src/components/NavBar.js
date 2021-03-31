@@ -38,6 +38,6 @@ const styles = StyleSheet.create({
         paddingBottom: 16,
     },
     sideElement: {
-        width: 48,
+        width: 54,
     },
 })

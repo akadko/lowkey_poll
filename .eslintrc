@@ -1,0 +1,63 @@
+{
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "prettier",
+    "prettier/react"
+  ],
+  "parser": "babel-eslint",
+  "plugins": ["react", "prettier"],
+  "env": {
+    "jasmine": true
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "singleQuote": true,
+        "tabWidth": 4,
+        "semi": false,
+        "bracketSpacing": true,
+        "jsxBracketSameLine": false,
+        "printWidth": 80
+      }
+    ],
+
+    "jsx-a11y/label-has-associated-control": "off",
+    "no-underscore-dangle": "off",
+    "no-extend-native": "off",
+    "no-use-before-define": "warn",
+    "no-unused-expressions": "off",
+    "new-cap": "off",
+    "no-undef": "off",
+    "no-shadow": "off",
+    "no-plusplus": "off",
+    "no-class-assign": "off",
+    "no-duplicate-imports": "warn",
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/no-unresolved": "off",
+    "array-callback-return": "off",
+    "no-prototype-builtins": "off",
+    "react/jsx-filename-extension": ["off", { "extensions": [".js", ".jsx"] }],
+    "react/sort-comp": "off",
+    "react/prefer-stateless-function": "off",
+    "react/no-deprecated": "off",
+    "react/forbid-prop-types": "warn",
+    "react/prop-types": "off",
+    "react/require-default-props": "off",
+    "react/no-unused-prop-types": "off",
+    "react/no-unused-state" : "off",
+    "react/destructuring-assignment" : "off",
+    "react/no-will-update-set-state" : "off"
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "modules": true
+    }
+  }
+}
